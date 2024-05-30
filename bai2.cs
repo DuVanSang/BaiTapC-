@@ -1,34 +1,22 @@
-﻿using System;
 
-namespace NumericTypeConversionApp
+using System;
+
+namespace NumericTypeConversion
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Nhắc người dùng nhập một số thực
-            Console.WriteLine("Nhập một số thực:");
+            Console.WriteLine("Please enter a real number:");
+            string input = Console.ReadLine();
+           
+            double number = double.Parse(input);
 
-            // Đọc giá trị nhập từ bàn phím
-            string userInput = Console.ReadLine();
+            int intNumber = (int)number;
 
-            // Chuyển đổi giá trị nhập thành số thực (double)
-            double realNumber;
-            if (double.TryParse(userInput, out realNumber))
-            {
-                // Ép kiểu số thực thành kiểu int
-                int intNumber = (int)realNumber;
+            long longNumber = (long)number;
 
-                // Ép kiểu số thực thành kiểu long
-                long longNumber = (long)realNumber;
-
-                // Hiển thị kết quả ra màn hình
-                Console.WriteLine($"Số bạn đã nhập là {realNumber}, khi chuyển thành int là {intNumber} và khi chuyển thành long là {longNumber}");
-            }
-            else
-            {
-                Console.WriteLine("Giá trị nhập không phải là số thực hợp lệ.");
-            }
+            Console.WriteLine($"The number you entered is {number}, as an int is {intNumber} and as a long is {longNumber}");
         }
     }
 }
